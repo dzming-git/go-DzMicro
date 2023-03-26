@@ -2,9 +2,35 @@
 
 计划使用 Golang 语言对现有 Python 项目 [DzMicro](https://github.com/dzming-git/DzMicro) 进行重构，以提高代码的性能、可扩展性和可维护性。
 
+## 重构进度
+
+| 模块名称                | 进度   | 备注   |
+| ----------------------- | ------ |------ |
+| api/platform_routes.go  | 未进行 |       |
+| api/server_routes.go    | 未进行 |       |
+| app/app.go              | 未进行 |       |
+| app/message_handler/bot_commands.go | 未进行 | |
+| app/message_handler/error_handler.go | 未进行 | |
+| app/message_handler/message_handler.go | 未进行 | |
+| app/services/service.go | 未进行 |       |
+| conf/dzmicro.go         | 未进行 |       |
+| conf/authority/authority.go | 已完成 | 部分功能等待app/services/service.go中的函数指令-函数映射表的完成 |
+| conf/consul_info/consul_info.go | 未进行 | |
+| conf/route_info/route_info.go | 未进行 |     |
+| utils/compare_dicts.go  | 未进行 |       |
+| utils/judge_same_listener.go | 未进行 |  |
+| utils/listener_manager.go | 未进行 |     |
+| utils/tasks.go          | 未进行 |       |
+| utils/watch_config.go   | 未进行 |       |
+| utils/network/app_utils.go | 未进行 |   |
+| utils/network/consul_client.go | 未进行 | |
+| utils/network/heartbeat_manager.go | 未进行 | |
+| utils/network/message_sender.go | 未进行 |   |
+
+
 ## 使用该引擎开发的微程序
 
-- [go-DBot](https://github.com/dzming-git/go-DBot)
+- [go-DBot](https://github.com/dzming-git/go-DBot)  待完善
 
 ## 安装使用
 
