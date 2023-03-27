@@ -4,30 +4,21 @@ import (
 	"fmt"
 	"os"
 
+	services "dzmicro/app/services"
+
 	"gopkg.in/yaml.v2"
 )
 
-type Config struct {
-	GlobalPermissionFirst bool                        `yaml:"GLOBAL_PERMISSION_FIRST"`
-	PermissionLevel       map[string]int              `yaml:"PERMISSION_LEVEL"`
-	Authorites            map[interface{}]interface{} `yaml:"AUTHORITIES"`
-}
-
-type ConfigConvert struct {
-	GlobalPermissionFirst bool                   `yaml:"GLOBAL_PERMISSION_FIRST"`
-	PermissionLevel       map[string]int         `yaml:"PERMISSION_LEVEL"`
-	Authorites            map[string]interface{} `yaml:"AUTHORITIES"`
-}
-
-type Authority struct {
-	ConfigPath string
-	Configs    ConfigConvert
-}
-
 func NewAuthority(configPath string) *Authority {
-	return &Authority{
-		ConfigPath: configPath,
+	// 单例模式
+	if AuthorityPtr == nil {
+		AuthorityPtr = &Authority{
+			ConfigPath: configPath,
+		}
+	} else {
+		AuthorityPtr.ConfigPath = configPath
 	}
+	return AuthorityPtr
 }
 
 // 转换函数，将 map[interface{}]interface{} 类型数据转换为 map[string]interface{} 类型
@@ -142,7 +133,7 @@ func (authorityPtr *Authority) GetPermissionByLevel(level int) (bool, string) {
 
 func (authorityPtr *Authority) CheckCommandPermission(command string, sourceID []string) (bool, bool) {
 	permissionLevelNotNone, permissionLevel := authorityPtr.GetPermissionLevel(sourceID)
-	permissionNeed := "USER" //TODO func_dict.get_permission(command)
+	permissionNeed := services.ServiceFuncMapPtr.GetServicePermission(command)
 	if permissionLevelNeed, ok := authorityPtr.Configs.PermissionLevel[permissionNeed]; ok {
 		if permissionLevelNeed == -3 {
 			// 只准内部调用，不对用户开放
