@@ -16,7 +16,7 @@
 | conf/dzmicro.go                        | 未进行 |                                                              |
 | conf/authority/authority.go            | 已完成 |                                                              |
 | conf/consul_info/consul_info.go        | 已完成 |                                                              |
-| conf/route_info/route_info.go          | 未进行 |                                                              |
+| conf/route_info/route_info.go          | 已完成 |                                                              |
 | utils/compare_dicts.go                 | 未进行 |                                                              |
 | utils/judge_same_listener.go           | 未进行 |                                                              |
 | utils/listener_manager.go              | 未进行 |                                                              |
