@@ -5,6 +5,8 @@ var ServiceFuncMapPtr *ServiceFuncMap
 
 type ServiceFuncMapInterface interface {
 	AddServiceFuncMap(command string, serviceFunc func(), permission string)
+	SetKeyword(keyword string)
+	GetKeyword() string
 	GetServiceFunc(command string) func()
 	GetServicePermission(command string) string
 }
@@ -24,6 +26,7 @@ type TaskInfo struct {
 }
 
 type ServiceFuncMap struct {
+	Keyword         string
 	ServiceFuncInfo map[string]struct {
 		ServiceFunc func()
 		Permission  string

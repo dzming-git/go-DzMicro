@@ -33,6 +33,14 @@ func (serviceFuncMapPtr *ServiceFuncMap) AddServiceFuncMap(command string, servi
 	}
 }
 
+func (serviceFuncMapPtr *ServiceFuncMap) SetKeyword(keyword string) {
+	serviceFuncMapPtr.Keyword = keyword
+}
+
+func (serviceFuncMapPtr *ServiceFuncMap) GetKeyword() string {
+	return serviceFuncMapPtr.Keyword
+}
+
 func (serviceFuncMapPtr *ServiceFuncMap) GetServiceFunc(command string) func() {
 	return serviceFuncMapPtr.ServiceFuncInfo[command].ServiceFunc
 }
