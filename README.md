@@ -12,9 +12,9 @@
 | app/message_handler/bot_commands.go    | 未进行 |                                                              |
 | app/message_handler/error_handler.go   | 未进行 |                                                              |
 | app/message_handler/message_handler.go | 未进行 |                                                              |
-| app/services/service.go                | 未进行 |                                                              |
+| app/services/service.go                | 已完成 |                                                              |
 | conf/dzmicro.go                        | 未进行 |                                                              |
-| conf/authority/authority.go            | 已完成 | 部分功能等待app/services/service.go<br />中的函数指令-函数映射表的完成 |
+| conf/authority/authority.go            | 已完成 |                                                              |
 | conf/consul_info/consul_info.go        | 未进行 |                                                              |
 | conf/route_info/route_info.go          | 未进行 |                                                              |
 | utils/compare_dicts.go                 | 未进行 |                                                              |
