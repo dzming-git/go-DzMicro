@@ -20,13 +20,11 @@ type Config struct {
 	Authorites            map[interface{}]interface{} `yaml:"AUTHORITIES"`
 }
 
-type ConfigConvert struct {
-	GlobalPermissionFirst bool
-	PermissionLevel       map[string]int
-	Authorites            map[string]interface{}
-}
-
 type Authority struct {
 	ConfigPath string
-	Configs    ConfigConvert
+	Configs    struct {
+		GlobalPermissionFirst bool
+		PermissionLevel       map[string]int
+		Authorites            map[string]interface{}
+	}
 }
